@@ -7,6 +7,7 @@ uuidv4();
 
 export const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
+
   const addTodo = (todo) => {
     setTodos([
       ...todos, // spread operator
@@ -14,12 +15,22 @@ export const TodoWrapper = () => {
     ]);
     console.log("todos =", todos);
   };
+
+  const toggleComplete = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div className="TodoWrapper">
       <h1>Get Things Done !</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo, index) => (
-        <Todo task={todo} key={index} />
+        <Todo task={todo} key={index}
+        toggleComplete={toggleComplete} />
       ))}
     </div>
   );
