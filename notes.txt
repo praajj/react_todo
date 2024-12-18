@@ -1,0 +1,15 @@
+useState hook -> accepts an initial state and returns two values:
+                  The current state.
+                  A function that updates the state.(also called as set function)
+               const [state, setState] = useState(initialState)
+                  useState(initialState)
+                  set functions, like setSomething(nextState)
+               example ->
+               import { useState } from 'react';
+                  function MyComponent() {
+                  const [age, setAge] = useState(28);
+                  const [name, setName] = useState('Taylor');
+                  const [todos, setTodos] = useState(() => createTodos());
+                  .....
+               here we have used useState in TodoForm to store the input that we get from the user, 
+               example the user types "shopping" in the input so your state is shopping  but your setvalue will start from 's' then 'sh' then 'sho' then 'shop' and so on....
