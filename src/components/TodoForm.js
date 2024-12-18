@@ -8,7 +8,7 @@ export const TodoForm = () => {
         className="todo-input"
         placeholder="Task for the day"
       />
-      <button type="submit" className="todo-btn"></button>
+      <button type="submit" className="todo-btn"> Add Task</button>
     </form>
   );
 }
